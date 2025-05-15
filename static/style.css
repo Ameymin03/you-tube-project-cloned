@@ -1,0 +1,128 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+/* Main container */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    color: #2e3a59;
+    font-weight: 700;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+input[type="text"] {
+    padding: 14px 16px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fafafa;
+    transition: all 0.2s ease-in-out;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    background-color: #fff;
+    border-color: #4f86f7;
+    box-shadow: 0 0 0 3px rgba(79, 134, 247, 0.2);
+}
+
+/* Button styling */
+button {
+    padding: 14px;
+    font-size: 1rem;
+    background-color: #4f86f7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3a6bdc;
+}
+
+/* Results section */
+.result {
+    margin-top: 20px;
+    padding: 25px;
+    background-color: #f9fafe;
+    border-left: 6px solid #4f86f7;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.result h2 {
+    color: #4f86f7;
+    margin-bottom: 10px;
+}
+
+.result h3 {
+    color: #555;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.result p {
+    white-space: pre-wrap;
+    font-size: 1.05rem;
+    color: #333;
+}
+
+/* Error message styling */
+.error {
+    padding: 14px;
+    background-color: #ffe8e8;
+    color: #b30000;
+    border-left: 6px solid #b30000;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    input[type="text"], button {
+        font-size: 0.95rem;
+    }
+}
