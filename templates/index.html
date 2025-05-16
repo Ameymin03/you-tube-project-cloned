@@ -10,17 +10,18 @@
         <h1>YouTube Transcript Summarizer</h1>
         <form method="POST">
             <input type="text" name="video_url" placeholder="Enter YouTube URL" required>
-            <button type="submit">Get Summary</button>
+            <button type="submit">Get Transcript</button>
         </form>
+        <form method="GET">
+    <button type="submit">Clear</button>
+</form>
 
         {% if error %}
             <div class="error">{{ error }}</div>
         {% endif %}
 
-        {% if summary %}
+        {% if transcript %}
             <div class="result">
-                <h2>Summary</h2>
-                <p>{{ summary }}</p>
                 <h3>Full Transcript</h3>
                 <p>{{ transcript }}</p>
             </div>

@@ -148,10 +148,10 @@ def extract_video_id(url: str):
         return parsed_url.path.lstrip('/')
     return None
 
-def summarize_text(text: str) -> str:
-    sentences = re.split(r'(?<=[.!?]) +', text)
-    summary = ' '.join(sentences[:3])
-    return summary if summary else text[:200] + "..."
+# def summarize_text(text: str) -> str:
+#     sentences = re.split(r'(?<=[.!?]) +', text)
+#     summary = ' '.join(sentences[:3])
+#     return summary if summary else text[:200] + "..."
 
 @app.get("/")
 async def root():
@@ -165,18 +165,18 @@ async def process_video(video_url: str):
     try:
         transcript = YouTubeTranscriptApi.get_transcript(video_id)
         text = " ".join([item['text'] for item in transcript])
-        summary = summarize_text(text)
+        #summary = summarize_text(text)
         data = {
             "video_id": video_id,
             "video_url": video_url,
             "transcript": text,
-            "summary": summary,
+            #"summary": summary,
             "timestamp": datetime.now().isoformat()
         }
         transcript_store[video_id] = data
         return data
     except Exception as e:
-        raise HTTPException(status_code=400, detail=f"Could not fetch transcript: {str(e)}")
+        raise HTTPException(status_code=400, detail=f"Transcript not available for this youtube video")
 
 @app.get("/all_transcripts")
 async def get_all_transcripts(): 
