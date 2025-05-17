@@ -3,7 +3,8 @@ import requests
 
 app = Flask(__name__)
 
-FASTAPI_URL = "http://localhost:8000"  # Make sure FastAPI is running here
+FASTAPI_URL = "https://your-fastapi-url.onrender.com"
+  # Make sure FastAPI is running here
 
 @app.route("/", methods=["GET", "POST"])
 def index():
