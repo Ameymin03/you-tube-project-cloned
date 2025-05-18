@@ -3,7 +3,8 @@ import requests
 
 app = Flask(__name__)
 
-FASTAPI_URL = "https://your-fastapi-url.onrender.com"
+FASTAPI_URL = "FASTAPI_URL = "https://fastapi-transcriber.up.railway.app"
+
   # Make sure FastAPI is running here
 
 @app.route("/", methods=["GET", "POST"])
